@@ -1,5 +1,5 @@
 {
-  "name": "mysql-extractor",
+  "name": "racor",
   "version": "1.0.0",
   "description": "MYSQL Data extractor",
   "main": "index.js",

@@ -12,7 +12,7 @@ clear();
 
 console.log(
   chalk.yellow(
-    figlet.textSync('CHAI', { horizontalLayout: 'full' })
+    figlet.textSync('RACOR', { horizontalLayout: 'full' })
   )
 )
 
