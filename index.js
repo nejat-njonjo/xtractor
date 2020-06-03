@@ -24,16 +24,16 @@ const run = async () => {
     healthdata = `healthdata_${healthdata}`
 
     const queryStatement = `
-      SELECT pii.patient_id, pii.identifier ARV_num, aa.TestOrdered, aa.VL as Viral_Load, aa.TESTDATE, aa.OrderDate FROM patient_identifier pii inner join 
-      (SELECT  pi.patient_id , lp.TESTVALUE VL,ls.TESTDATE, lt.*
-      FROM ${healthdata}.Lab_Sample ls
-        left JOIN ${healthdata}.LabTestTable lt ON ls.PATIENTID = lt.Pat_ID
-          left JOIN ${healthdata}.Lab_Parameter lp ON ls.Sample_ID = lp.Sample_ID
-          join ${dbname}.patient_identifier pi on ls.PATIENTID = pi.identifier
-      where pi.identifier_type = 3
-        #WHERE lt.TestOrdered = 'Viral Load'
-          #group  BY pi.patient_id
-          ) as aa on pii.patient_id = aa.patient_id where pii.identifier_type = 4 GROUP BY pii.identifier, aa.TESTDATE, aa.OrderDate order by pii.identifier; 
+    SELECT pii.patient_id, pii.identifier ARV_num, aa.TestOrdered as test_ordered, aa.VL as viral_load, aa.TESTDATE as vl_sample_date, aa.TimeStamp as vl_test_date FROM patient_identifier pii inner join 
+    (SELECT  pi.patient_id , lp.TESTVALUE VL, ls.TimeStamp, ls.TESTDATE, lt.*
+    FROM ${healthdata}.Lab_Sample ls
+      left JOIN ${healthdata}.LabTestTable lt ON ls.PATIENTID = lt.Pat_ID
+        left JOIN ${healthdata}.Lab_Parameter lp ON ls.Sample_ID = lp.Sample_ID
+        join ${dbname}.patient_identifier pi on ls.PATIENTID = pi.identifier
+    where pi.identifier_type = 3
+      #WHERE lt.TestOrdered = 'Viral Load'
+        #group  BY pi.patient_id
+        ) as aa on pii.patient_id = aa.patient_id where pii.identifier_type = 4 GROUP BY pii.identifier, aa.TESTDATE order by pii.identifier; 
       `
 
     const queryStatus = new Spiner(`Executing query in ${dbname} database, please wait ...`)
