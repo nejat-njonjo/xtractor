@@ -12,25 +12,28 @@ clear();
 
 console.log(
   chalk.yellow(
-    figlet.textSync('RACOR', { horizontalLayout: 'full' })
+    figlet.textSync('CHAI', { horizontalLayout: 'full' })
   )
 )
 
 const run = async () => {
   try {
-    const {dbname} = await inquirer.askMysqlCredentials()
+    let {dbname, healthdata} = await inquirer.askMysqlCredentials()
     const db = new MYSQL('localhost', 'root', 'Mlambe101!', dbname)
+
+    healthdata = `healthdata_${healthdata}`
+
     const queryStatement = `
-      SELECT pii.patient_id, pii.identifier ARV_num, aa.TestOrdered, aa.VL as Viral_Load, aa.TESTDATE FROM patient_identifier pii inner join 
+      SELECT pii.patient_id, pii.identifier ARV_num, aa.TestOrdered, aa.VL as Viral_Load, aa.TESTDATE, aa.OrderDate FROM patient_identifier pii inner join 
       (SELECT  pi.patient_id , lp.TESTVALUE VL,ls.TESTDATE, lt.*
-      FROM healthdata2.Lab_Sample ls
-        left JOIN healthdata2.LabTestTable lt ON ls.PATIENTID = lt.Pat_ID
-          left JOIN healthdata2.Lab_Parameter lp ON ls.Sample_ID = lp.Sample_ID
+      FROM ${healthdata}.Lab_Sample ls
+        left JOIN ${healthdata}.LabTestTable lt ON ls.PATIENTID = lt.Pat_ID
+          left JOIN ${healthdata}.Lab_Parameter lp ON ls.Sample_ID = lp.Sample_ID
           join ${dbname}.patient_identifier pi on ls.PATIENTID = pi.identifier
       where pi.identifier_type = 3
         #WHERE lt.TestOrdered = 'Viral Load'
           #group  BY pi.patient_id
-          ) as aa on pii.patient_id = aa.patient_id  where pii.identifier_type = 4 GROUP BY pii.identifier, aa.TESTDATE  order by pii.identifier; 
+          ) as aa on pii.patient_id = aa.patient_id where pii.identifier_type = 4 GROUP BY pii.identifier, aa.TESTDATE, aa.OrderDate order by pii.identifier; 
       `
 
     const queryStatus = new Spiner(`Executing query in ${dbname} database, please wait ...`)
