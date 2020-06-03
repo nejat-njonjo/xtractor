@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 
 class MYSQL {
-  constructor(host = 'localhost', user, password, database) {
+  constructor(host = 'localhost', user, password, database = '') {
     this.host = host
     this.user = user
     this.password = password
@@ -11,9 +11,17 @@ class MYSQL {
   }
 
   connect() {
-    return mysql.createConnection({
-      host: this.host, user: this.user, password: this.password, database: this.database
-    })
+    const options = {
+      host: this.host, user: this.user, password: this.password
+    }
+
+    if (this.database) {
+      Object.assign(options, {
+        database: this.database
+      })
+    }
+
+    return mysql.createConnection(options)
   }
 
   exec_query(statement) {
@@ -25,6 +33,19 @@ class MYSQL {
         }
 
         resolve(result)
+      })
+    })
+  }
+
+  createDatabase(dbname) {
+    return new Promise((resolve, reject) => {
+      this.connection.query(`CREATE DATABASE IF NOT EXISTS ${dbname}`, (error, result) => {
+        if (error) {
+          reject(error)
+          return
+        }
+
+        resolve(true)
       })
     })
   }
