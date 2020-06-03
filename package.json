@@ -1,16 +1,18 @@
 {
-  "name": "racor",
+  "name": "chai",
   "version": "1.0.0",
-  "description": "MYSQL Data extractor",
+  "description": "CHAI MYSQL Data extractor",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "extract",
-    "CLI"
+    "CLI",
+    "Chai",
+    "Baobab"
   ],
-  "author": "Nejat Njonjo",
+  "author": "Baobab Health Trust",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.0.0",
