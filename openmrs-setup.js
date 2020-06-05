@@ -1,13 +1,12 @@
 const MYSQL = require('./db')
 const { sourceDirectory } = require('./config')
+const chalk = require('chalk')
 const reader = require('./lib/reader')
 const childProcess = require("child_process")
 const db = new MYSQL('localhost', 'root', 'Mlambe101!')
 
 const CLUI = require('clui')
 const Spiner = CLUI.Spinner;
-
-let spinner = new Spiner('');
 
 const fileExtention = filename => filename.toLowerCase().split('.').pop()
 
@@ -26,15 +25,18 @@ const extractDatabaseName = filename => {
   return dbname;
 }
 
+const spinner = new Spiner('Dumping sites, this might take longer...');
+
 const dumpSQLData = (database, source) => {
   return new Promise((resolve, reject) => {
     try {
-      childProcess.exec(`pv ${source} | mysql -u root -pMlambe101! ${database}`, (error, stdout, stderror) => {
+      spinner.start()
+      childProcess.exec(`mysql -u root -pMlambe101! ${database} < ${source}`, (error, stdout, stderror) => {
+        spinner.stop()
         if (error) {
           reject(error)
           return
         }
-
         resolve(true)
       })
     } catch (error) {
@@ -48,25 +50,29 @@ const runSetup = async () => {
     const files = await reader.listFiles(sourceDirectory)
 
     if (files) {
+      spinner.start();
       files.forEach(filename => {
-        const ext = fileExtention(filename)
         const dbname = extractDatabaseName(filename)
         const filePath = `${sourceDirectory}/${filename}`
 
-        const created = db.createDatabase(dbname);
+        db.createDatabase(dbname).then(created => {
+          if (created) {
+            spinner.stop();
 
-        if (created) {
-          spinner = new Spiner(`Dumping data into ${dbname} from ${filePath}...`);
-          spinner.start();
-          const dump = await dumpSQLData(dbname, filePath);
-
-          if (dump) {
-            spinner.stop()
+            dumpSQLData(dbname, filePath).then(dumped => {
+              if (dumped) {
+                console.log(
+                  chalk.blue(`Imported ${filename} into ${dbname} database`)
+                )
+                spinner.stop()
+              }
+            }).catch(err => spinner.stop())
           }
-        }
+        }).catch(err => spinner.stop())
       })
     }
   } catch (error) {
+    spinner.stop()
     throw new Error(error)
   }
 }

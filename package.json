@@ -15,6 +15,7 @@
   "author": "Baobab Health Trust",
   "license": "MIT",
   "dependencies": {
+    "@rodrigogs/mysql-events": "^0.6.0",
     "chalk": "^4.0.0",
     "clear": "^0.1.0",
     "clui": "^0.3.6",
@@ -24,6 +25,7 @@
     "lodash": "^4.17.15",
     "minimist": "^1.2.5",
     "moment": "^2.26.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "ora": "^4.0.4"
   }
 }

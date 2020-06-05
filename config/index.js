@@ -1,6 +1,6 @@
 const config = {
-  outDirectory: '/home/dataframe/Desktop/ChaiExports',
-  sourceDirectory: '/home/dataframe/Desktop/test'
+  outDirectory: '/home/dataframe/Desktop/csv',
+  sourceDirectory: '/home/dataframe/Desktop/sites'
 }
 
 module.exports = config

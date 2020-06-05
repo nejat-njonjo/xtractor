@@ -1,0 +1,370 @@
+[
+  {
+    "openmrs": "openmrs_area18",
+    "healthdata": "area18"
+  },
+  {
+    "openmrs": "openmrs_bvumbwe",
+    "healthdata": "bvumbwe"
+  },
+  {
+    "openmrs": "openmrs_chikowa",
+    "healthdata": "chikowa"
+  },
+  {
+    "openmrs": "openmrs_chileka",
+    "healthdata": "chileka"
+  },
+  {
+    "openmrs": "openmrs_chilipa",
+    "healthdata": "chilipa"
+  },
+  {
+    "openmrs": "openmrs_chilomoni",
+    "healthdata": "chilomoni"
+  },
+  {
+    "openmrs": "openmrs_chirumba",
+    "healthdata": "chilumba"
+  },
+  {
+    "openmrs": "openmrs_chimaliro",
+    "healthdata": "chimaliro"
+  },
+  {
+    "openmrs": "openmrs_chintheche",
+    "healthdata": "chintheche"
+  },
+  {
+    "openmrs": "openmrs_chiradzulu",
+    "healthdata": "chiradzulu"
+  },
+  {
+    "openmrs": "openmrs_chirimba",
+    "healthdata": "chirimba"
+  },
+  {
+    "openmrs": "openmrs_chitedze",
+    "healthdata": "chitedze"
+  },
+  {
+    "openmrs": "openmrs_chitekesa",
+    "healthdata": "chitekesa"
+  },
+  {
+    "openmrs": "openmrs_chitera",
+    "healthdata": "chitera"
+  },
+  {
+    "openmrs": "openmrs_chitipa",
+    "healthdata": "chitipa"
+  },
+  {
+    "openmrs": "openmrs_chonde",
+    "healthdata": "chonde"
+  },
+  {
+    "openmrs": "openmrs_dowa",
+    "healthdata": "dowa"
+  },
+  {
+    "openmrs": "openmrs_dziwe",
+    "healthdata": "dziwe"
+  },
+  {
+    "openmrs": "openmrs_ekwendeni",
+    "healthdata": "ekwendeni"
+  },
+  {
+    "openmrs": "openmrs_embangweni",
+    "healthdata": "embangweni"
+  },
+  {
+    "openmrs": "openmrs_gabriels",
+    "healthdata": "gabriels"
+  },
+  {
+    "openmrs": "openmrs_holy",
+    "healthdata": "holy"
+  },
+  {
+    "openmrs": "openmrs_kadidi",
+    "healthdata": "kadidi"
+  },
+  {
+    "openmrs": "openmrs_kalembo",
+    "healthdata": "kalembo"
+  },
+  {
+    "openmrs": "openmrs_kapiri",
+    "healthdata": "kapiri"
+  },
+  {
+    "openmrs": "openmrs_karonga",
+    "healthdata": "karonga"
+  },
+  {
+    "openmrs": "openmrs_kasungu",
+    "healthdata": "kasungu"
+  },
+  {
+    "openmrs": "openmrs_katema",
+    "healthdata": "katema"
+  },
+  {
+    "openmrs": "openmrs_katuli",
+    "healthdata": "katuli"
+  },
+  {
+    "openmrs": "openmrs_kb",
+    "healthdata": "kb"
+  },
+  {
+    "openmrs": "openmrs_khongoni",
+    "healthdata": "khongoni"
+  },
+  {
+    "openmrs": "openmrs_khonjeni",
+    "healthdata": "khonjeni"
+  },
+  {
+    "openmrs": "openmrs_kochilira",
+    "healthdata": "kochilira"
+  },
+  {
+    "openmrs": "openmrs_kukalanga",
+    "healthdata": "kukalanga"
+  },
+  {
+    "openmrs": "openmrs_likangala",
+    "healthdata": "likangala"
+  },
+  {
+    "openmrs": "openmrs_limbe",
+    "healthdata": "limbe"
+  },
+  {
+    "openmrs": "openmrs_lirangwe",
+    "healthdata": "lirangwe"
+  },
+  {
+    "openmrs": "openmrs_lundu",
+    "healthdata": "lundu"
+  },
+  {
+    "openmrs": "openmrs_lunjika",
+    "healthdata": "lunjika"
+  },
+  {
+    "openmrs": "openmrs_machinga",
+    "healthdata": "machinga"
+  },
+  {
+    "openmrs": "openmrs_macroBT",
+    "healthdata": "macro"
+  },
+  {
+    "openmrs": "openmrs_makwapala",
+    "healthdata": "makwapala"
+  },
+  {
+    "openmrs": "openmrs_malembo",
+    "healthdata": "malembo"
+  },
+  {
+    "openmrs": "openmrs_mangamba",
+    "healthdata": "mangamba"
+  },
+  {
+    "openmrs": "openmrs_mangochi",
+    "healthdata": "mangochi"
+  },
+  {
+    "openmrs": "openmrs_mangunda",
+    "healthdata": "mangunda"
+  },
+  {
+    "openmrs": "openmrs_mapale",
+    "healthdata": "mapale"
+  },
+  {
+    "openmrs": "openmrs_masenjere",
+    "healthdata": "masenjere"
+  },
+  {
+    "openmrs": "openmrs_matawale",
+    "healthdata": "matawale"
+  },
+  {
+    "openmrs": "openmrs_matiya",
+    "healthdata": "matiya"
+  },
+  {
+    "openmrs": "openmrs_mbenje",
+    "healthdata": "mbenje"
+  },
+  {
+    "openmrs": "openmrs_mchinji",
+    "healthdata": "mchinji"
+  },
+  {
+    "openmrs": "openmrs_mdeka",
+    "healthdata": "mdeka"
+  },
+  {
+    "openmrs": "openmrs_migowi",
+    "healthdata": "migowi"
+  },
+  {
+    "openmrs": "openmrs_mikolongwe",
+    "healthdata": "mikolongwe"
+  },
+  {
+    "openmrs": "openmrs_mitundu",
+    "healthdata": "mitundu"
+  },
+  {
+    "openmrs": "openmrs_mkanda",
+    "healthdata": "mkanda"
+  },
+  {
+    "openmrs": "openmrs_mpondasi",
+    "healthdata": "mpondasi"
+  },
+  {
+    "openmrs": "openmrs_mponela",
+    "healthdata": "mponela"
+  },
+  {
+    "openmrs": "openmrs_mposa",
+    "healthdata": "mposa"
+  },
+  {
+    "openmrs": "openmrs_mulibwanji",
+    "healthdata": "mulibwanji"
+  },
+  {
+    "openmrs": "openmrs_mwanza",
+    "healthdata": "mwanza"
+  },
+  {
+    "openmrs": "openmrs_mzc",
+    "healthdata": "mzc"
+  },
+  {
+    "openmrs": "openmrs_mzimba",
+    "healthdata": "mzimba"
+  },
+  {
+    "openmrs": "openmrs_mzuzu_macro",
+    "healthdata": "mzuzu"
+  },
+  {
+    "openmrs": "openmrs_namanja",
+    "healthdata": "namanja"
+  },
+  {
+    "openmrs": "openmrs_nambazo",
+    "healthdata": "nambazo"
+  },
+  {
+    "openmrs": "openmrs_namwera",
+    "healthdata": "namwera"
+  },
+  {
+    "openmrs": "openmrs_ngabu",
+    "healthdata": "ngabu"
+  },
+  {
+    "openmrs": "openmrs_ngokwe",
+    "healthdata": "ngokwe"
+  },
+  {
+    "openmrs": "openmrs_nkhatabay",
+    "healthdata": "nkhatabay"
+  },
+  {
+    "openmrs": "openmrs_nkhoma",
+    "healthdata": "nkhoma"
+  },
+  {
+    "openmrs": "openmrs_nkhulambe",
+    "healthdata": "nkhulambe"
+  },
+  {
+    "openmrs": "openmrs_nkhwazi",
+    "healthdata": "nkhwazi"
+  },
+  {
+    "openmrs": "openmrs_nkope",
+    "healthdata": "nkope"
+  },
+  {
+    "openmrs": "openmrs_ntaja",
+    "healthdata": "ntaja"
+  },
+  {
+    "openmrs": "openmrs_ntcheu",
+    "healthdata": "ntcheu"
+  },
+  {
+    "openmrs": "openmrs_ntchisi",
+    "healthdata": "ntchisi"
+  },
+  {
+    "openmrs": "openmrs_nyambi",
+    "healthdata": "nyambi"
+  },
+  {
+    "openmrs": "openmrs_phalombehc",
+    "healthdata": "phalombehc"
+  },
+  {
+    "openmrs": "openmrs_rumphi",
+    "healthdata": "rumphi"
+  },
+  {
+    "openmrs": "openmrs_salima",
+    "healthdata": "salima"
+  },
+  {
+    "openmrs": "openmrs_sorgin",
+    "healthdata": "sorgin"
+  },
+  {
+    "openmrs": "openmrs_southlunzu",
+    "healthdata": "southlunzu"
+  },
+  {
+    "openmrs": "openmrs_st_st",
+    "healthdata": "st"
+  },
+  {
+    "openmrs": "openmrs_st_st",
+    "healthdata": "st"
+  },
+  {
+    "openmrs": "openmrs_stjohns",
+    "healthdata": "stjohns"
+  },
+  {
+    "openmrs": "openmrs_tengani",
+    "healthdata": "tengani"
+  },
+  {
+    "openmrs": "openmrs_theresa",
+    "healthdata": "theresa"
+  },
+  {
+    "openmrs": "openmrs_thondwe",
+    "healthdata": "thondwe"
+  },
+  {
+    "openmrs": "openmrs_thumbwe",
+    "healthdata": "thumbwe"
+  },
+  {
+    "openmrs": "openmrs_trinity",
+    "healthdata": "trinity"
+  }
+]
