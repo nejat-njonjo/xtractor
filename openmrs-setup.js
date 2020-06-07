@@ -27,50 +27,50 @@ const extractDatabaseName = filename => {
 
 const spinner = new Spiner('Dumping sites, this might take longer...');
 
-const dumpSQLData = (database, source) => {
-  return new Promise((resolve, reject) => {
-    try {
-      spinner.start()
-      childProcess.exec(`mysql -u root -pMlambe101! ${database} < ${source}`, (error, stdout, stderror) => {
-        spinner.stop()
-        if (error) {
-          reject(error)
-          return
-        }
-        resolve(true)
-      })
-    } catch (error) {
-      reject(error)
-    }
-  })
+const dumpSQLData = (database, source, callaback) => {
+  try {
+    spinner.start()
+    childProcess.exec(`mysql -u root -pMlambe101! ${database} < ${source} --verbose`, (error, stdout, stderror) => {
+      spinner.stop()
+      if (error) {
+        callaback(error, null)
+        return
+      }
+      callaback(null, true)
+    })
+  } catch (error) {
+    reject(error)
+  }
 }
 
-const runSetup = async () => {
+const runSetup = () => {
   try {
-    const files = await reader.listFiles(sourceDirectory)
+    reader.listFiles(sourceDirectory).then(files => {
+      if (files) {
+        spinner.start();
+        files.forEach(filename => {
+          const dbname = extractDatabaseName(filename)
+          const filePath = `${sourceDirectory}/${filename}`
+  
+          db.createDatabase(dbname).then(created => {
+            if (created) {
+              spinner.stop();
+  
+              dumpSQLData(dbname, filePath, (err, dumped) => {
+                  if (dumped) {
+                    console.log(
+                      chalk.blue(`Imported ${filename} into ${dbname} database`)
+                    )
+                    spinner.stop()
+                  }
+              })
+            }
+          }).catch(err => spinner.stop())
+        })
+      }
+    })
 
-    if (files) {
-      spinner.start();
-      files.forEach(filename => {
-        const dbname = extractDatabaseName(filename)
-        const filePath = `${sourceDirectory}/${filename}`
 
-        db.createDatabase(dbname).then(created => {
-          if (created) {
-            spinner.stop();
-
-            dumpSQLData(dbname, filePath).then(dumped => {
-              if (dumped) {
-                console.log(
-                  chalk.blue(`Imported ${filename} into ${dbname} database`)
-                )
-                spinner.stop()
-              }
-            }).catch(err => spinner.stop())
-          }
-        }).catch(err => spinner.stop())
-      })
-    }
   } catch (error) {
     spinner.stop()
     throw new Error(error)
